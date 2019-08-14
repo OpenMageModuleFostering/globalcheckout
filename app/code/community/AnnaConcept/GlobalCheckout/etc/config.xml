@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * AnnaConcept
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ * It is also available through the world-wide-web at this URL:
+ * https://www.gnu.org/licenses/gpl-3.0.txt
+ *
+ * @category    AnnaConcept
+ * @package     AnnaConcept_GlobalCheckout
+ * @copyright   Copyright (c) 2015 AnnaConcept. (http://annaconcept.com)
+ * @license     https://www.gnu.org/licenses/gpl-3.0.txt GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ */
+
+/**
+ * Config xml
+ *
+ * @category    AnnaConcept
+ * @package     AnnaConcept_GlobalCheckout
+ * @author      Sebastian Pruteanu <sebi.pruteanu@gmail.com>
+ */
+-->
+<config>
+	<modules>
+		<AnnaConcept_GlobalCheckout>
+			<version>1.0.1</version>
+		</AnnaConcept_GlobalCheckout>
+	</modules>
+
+	<global>
+		<blocks>
+            <globalcheckout>
+                <class>AnnaConcept_GlobalCheckout_Block</class>
+            </globalcheckout>
+        </blocks>
+		<helpers>
+			<globalcheckout>
+				<class>AnnaConcept_GlobalCheckout_Helper</class>
+			</globalcheckout>
+		</helpers>
+		<models>
+			<globalcheckout>
+				<class>AnnaConcept_GlobalCheckout_Model</class>
+			</globalcheckout>
+		</models>
+		<resources>
+			<globalcheckout_setup>
+				<setup>
+					<module>AnnaConcept_GlobalCheckout</module>
+					<class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</globalcheckout_setup>
+			<globalcheckout_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</globalcheckout_write>
+			<globalcheckout_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</globalcheckout_read>
+		</resources>
+		<template>
+			<email>
+				<payment_globalcheckout_email_template module="globalcheckout">
+					<label>GlobalCheckout Email Notification</label>
+					<file>global_checkout_email_notification.html</file>
+					<type>html</type>
+				</payment_globalcheckout_email_template>
+			</email>
+		</template>
+	</global>
+	
+	<frontend>
+		<layout>
+			<updates>
+                  <globalcheckout>
+                        <file>ac_globalcheckout.xml</file>
+                  </globalcheckout>
+             </updates>
+		</layout>
+        <routers>
+            <globalcheckout>
+                <use>standard</use>
+                <args>
+                    <module>AnnaConcept_GlobalCheckout</module>
+                    <frontName>globalcheckout</frontName>
+                </args>
+            </globalcheckout>
+        </routers>
+        <events>
+            <payment_method_is_active>
+                <observers>
+                    <gc_payment_method_is_active>
+                        <type>singleton</type>
+                        <class>AnnaConcept_GlobalCheckout_Model_Observer</class>
+                        <method>paymentMethodIsActive</method>
+                    </gc_payment_method_is_active>
+                </observers>
+            </payment_method_is_active>
+        </events>
+    </frontend>
+	
+	
+	<default>
+		<payment>
+			<globalcheckout>
+				<active>0</active>
+				<model>globalcheckout/standard</model>
+				<payment_action>sale</payment_action>
+				<order_status>pending</order_status>
+				<title><![CDATA[Global Checkout]]></title>
+				<debug>1</debug>
+				<live_url><![CDATA[https://secure.globalcheckout.com/global-check-out.do]]></live_url>
+				<debug_url><![CDATA[https://secure1.cgwstage.com/globalcheckout/global-check-out.do]]></debug_url>
+				<payment_url><![CDATA[https://www.paypal.com/cgi-bin/webscr?business=email@example.com&cmd=_xclick&currency_code=USD&amount={amount}&item_name=Order%20{order}]]></payment_url>
+			</globalcheckout>
+			<email>
+        		<email_template>payment_globalcheckout_email_template</email_template>
+       		</email>
+		</payment>		
+	</default>
+</config>

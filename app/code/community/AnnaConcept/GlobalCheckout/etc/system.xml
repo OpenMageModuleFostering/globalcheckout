@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * AnnaConcept
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ * It is also available through the world-wide-web at this URL:
+ * https://www.gnu.org/licenses/gpl-3.0.txt
+ *
+ * @category    AnnaConcept
+ * @package     AnnaConcept_GlobalCheckout
+ * @copyright   Copyright (c) 2015 AnnaConcept. (http://annaconcept.com)
+ * @license     https://www.gnu.org/licenses/gpl-3.0.txt GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ */
+
+/**
+ * System xml
+ *
+ * @category    AnnaConcept
+ * @package     AnnaConcept_GlobalCheckout
+ * @author      Sebastian Pruteanu <sebi.pruteanu@gmail.com>
+ */
+-->
+<config>
+	<sections>
+		<payment>
+			<groups>
+				<globalcheckout translate="label" module="globalcheckout">
+					<label>AnnaConcept - GlobalCheckout</label>
+					<sort_order>600</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label>Enabled</label>
+							<comment>Enable or disable this payment method.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label>Title</label>
+							<comment>Default title for payment on checkout page and order view page.</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</title>
+
+						<order_status translate="label comment">
+							<label>New order status</label>
+							<comment>Order status for new orders paid by this payment method.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_order_status</source_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</order_status>
+                        <gc_allowspecific translate="label">
+                            <label>Shipping to Applicable Countries (shipping)</label>
+                            <frontend_type>allowspecific</frontend_type>
+                            <sort_order>31</sort_order>
+                            <source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </gc_allowspecific>
+                        <gc_specificcountry translate="label">
+                            <label>Shipping to Specific Countries (shipping)</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>32</sort_order>
+                            <source_model>adminhtml/system_config_source_country</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                        </gc_specificcountry>
+                        <disable_other_methods translate="label">
+                            <label>Disable other payment methods when GC is available</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>33</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </disable_other_methods>
+                        <allowspecific translate="label">
+                            <label>Payment from Applicable Countries (billing)</label>
+                            <frontend_type>allowspecific</frontend_type>
+                            <sort_order>35</sort_order>
+                            <source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </allowspecific>
+                        <specificcountry translate="label">
+                            <label>Payment from Specific Countries (billing)</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>36</sort_order>
+                            <source_model>adminhtml/system_config_source_country</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                        </specificcountry>
+						<debug translate="label comment">
+							<label>Debug mode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</debug>
+						<live_url translate="label comment">
+							<label>Production URL</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</live_url>
+						<debug_url translate="label comment">
+							<label>Debug URL</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</debug_url>
+						<email_template translate="label">
+                            <label>Email Template</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>61</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_template>
+						<payment_url translate="label comment">
+							<label>Payment URL</label>
+							<comment>Variables you can use : {order}, {amount}, {shipping}</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>65</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</payment_url>
+						<notification_email translate="label comment">
+							<label>Notification Email</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>66</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</notification_email>
+					</fields>
+				</globalcheckout>
+			</groups>
+		</payment>
+	</sections>
+</config>
