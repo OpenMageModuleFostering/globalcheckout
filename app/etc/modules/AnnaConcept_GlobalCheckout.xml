@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * AnnaConcept
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ * It is also available through the world-wide-web at this URL:
+ * https://www.gnu.org/licenses/gpl-3.0.txt
+ *
+ * @category    AnnaConcept
+ * @package     AnnaConcept_GlobalCheckout
+ * @copyright   Copyright (c) 2015 AnnaConcept. (http://annaconcept.com)
+ * @license     https://www.gnu.org/licenses/gpl-3.0.txt GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ */
+
+/**
+ * Module xml
+ *
+ * @category    AnnaConcept
+ * @package     AnnaConcept_GlobalCheckout
+ * @author      Sebastian Pruteanu <sebi.pruteanu@gmail.com>
+ */
+-->
+<config>
+	<modules>
+		<AnnaConcept_GlobalCheckout>
+			<active>true</active>
+			<codePool>community</codePool>
+			<depends>
+				<Mage_Payment />
+			</depends>
+		</AnnaConcept_GlobalCheckout>
+	</modules>
+</config>

@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/globalcheckout",
+    "type": "magento-module",
+    "license": "GNU-GENERAL-PUBLIC-LICENSE-(GPL-3.0)",
+    "homepage": "",
+    "description": "Global Checkout international payment gateway",
+    "authors": [
+    {
+        "name": "AnnaConcept",
+        "email": "info@annaconcept.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
