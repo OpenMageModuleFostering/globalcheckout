@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/globalcheckout",
+    "name": "OpenMageModuleFostering\/globalcheckout",
     "type": "magento-module",
     "license": "GPL",
     "homepage": "",
     "description": "Sell Internationally in hours! Fraud free, lowest shipping rates and multi-lingual customer support.",
     "authors": [
-    {
-        "name": "AnnaConcept",
-        "email": "info@annaconcept.com"
-    }
-],
+        {
+            "name": "AnnaConcept",
+            "email": "info@annaconcept.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
